@@ -1,0 +1,18 @@
+Package: publishedDeNovos
+Title: Published De Novos Dataset From Developmental Disorder Sequencing Studies
+Version: 0.1.0
+Authors@R: person(given="Jeremy", family="McRae",
+    email="jeremy.mcrae@sanger.ac.uk", role=c("aut", "cre"))
+Description: Data package of de novo variants identified in exome and genome
+    sequencing of trios with developmental disorders.
+Depends:
+    R (>= 3.1.0)
+License: MIT + file LICENSE
+LazyData: true
+Imports:
+    gdata (>= 2.13.3),
+    httr (>= 0.5),
+    tm (>= 0.6),
+    rjson
+Suggests:
+    testthat
