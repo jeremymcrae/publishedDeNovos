@@ -1,5 +1,5 @@
 Package: publishedDeNovos
-Title: Published De Novos Dataset From Developmental Disorder Sequencing Studies
+Title: Published De Novos Dataset from Developmental Disorder Sequencing Studies
 Version: 0.1.0
 Authors@R: person(given="Jeremy", family="McRae",
     email="jeremy.mcrae@sanger.ac.uk", role=c("aut", "cre"))

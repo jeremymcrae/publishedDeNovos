@@ -48,9 +48,9 @@
 #' @source url(http://www.nature.com/nature/journal/v515/n7526/extref/nature13772-s4.xlsx)
 #' @source url(http://www.nature.com/nature/journal/v506/n7487/extref/nature12929-s2.xlsx)
 #' @source url(http://www.nature.com/nature/journal/v498/n7453/extref/nature12141-s1.pdf)
-#' @format A data frame with twelve variables: \code{person_id}, \code{chrom},
-#'     \code{start_pos}, \code{end_pos}, \code{ref_allele}, \code{alt_allele},
-#'     \code{hgnc}, \code{consequence}, \code{study_code},
+#' @format A data frame with thirteen variables: \code{person_id}, \code{sex},
+#'     \code{chrom}, \code{start_pos}, \code{end_pos}, \code{ref_allele},
+#'     \code{alt_allele}, \code{hgnc}, \code{consequence}, \code{study_code},
 #'     \code{publication_doi}, \code{study_phenotype} and \code{type}
 "variants"
 
