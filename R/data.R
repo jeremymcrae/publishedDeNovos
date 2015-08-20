@@ -52,7 +52,7 @@
 #'     \code{start_pos}, \code{end_pos}, \code{ref_allele}, \code{alt_allele},
 #'     \code{hgnc}, \code{consequence}, \code{study_code},
 #'     \code{publication_doi}, \code{study_phenotype} and \code{type}
-"published_de_novos"
+"variants"
 
 #' Cohort information.
 #'
