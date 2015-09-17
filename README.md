@@ -7,6 +7,28 @@ studies that have been reported in publications. All of the data is obtained
 from publically-available sources, such as supplementary data from the
 individual publications.
 
+##### Installation
+The package can be installed or updated using R 3.1.0 or greater with:
+```R
+library(devtools) # if necessary install with install.packages("devtools")
+devtools::install_github("jeremymcrae/recessiveStats")
+
+# Alternatively, clone the repository, run R 3.1 from within the top level of
+# the repository and use the devtools::build() to build the package for other R
+# versions.
+```
+
+##### Usage
+```R
+library(publishedDeNovos)
+
+# access the dataframe of published de novos
+head(variants)
+
+# access the dataframe of cohort details
+head(cohorts)
+```
+
 ### Studies
 reference      |      phenotype      |      resources
 ----           |      ----           |      ----
