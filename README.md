@@ -11,7 +11,7 @@ individual publications.
 The package can be installed or updated using R 3.1.0 or greater with:
 ```R
 library(devtools) # if necessary install with install.packages("devtools")
-devtools::install_github("jeremymcrae/recessiveStats")
+devtools::install_github("jeremymcrae/publishedDeNovos")
 
 # Alternatively, clone the repository, run R 3.1 from within the top level of
 # the repository and use the devtools::build() to build the package for other R
