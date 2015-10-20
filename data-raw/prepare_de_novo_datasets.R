@@ -21,3 +21,7 @@ variants$type[nchar(variants$ref_allele) != 1 | nchar(variants$alt_allele) != 1]
 variants[] = lapply(variants, as.character)
 
 save(variants, file="data/variants.rda", compress="xz")
+
+# also save a copy, so that non-R code can also access the data
+gz = gzfile("data-raw/variants.txt.gz", "w")
+write.table(variants, gz, sep="\t", quote=FALSE, row.names=FALSE)
