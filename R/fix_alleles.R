@@ -15,7 +15,7 @@
 fix_sub_alleles <-function(variants, allele_column) {
     
     temp = grepl("sub", variants[[allele_column]])
-    variants[[allele_column]][temp] = gsub("-&gt;|>", "/", variants[[allele_column]][temp])
+    variants[[allele_column]][temp] = gsub("-[&gt;|>]", "/", variants[[allele_column]][temp])
     variants[[allele_column]][temp] = gsub("\\(|\\)", "", variants[[allele_column]][temp])
     variants[[allele_column]][temp] = gsub("sub", "", variants[[allele_column]][temp])
     
