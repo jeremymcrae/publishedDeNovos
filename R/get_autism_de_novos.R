@@ -31,12 +31,17 @@ autism_de_novos <- function() {
     iossifov_nature = iossifov_nature_de_novos()
     derubeis_nature = de_rubeis_de_novos()
     
-    # exclude de novos identified in previous studies
+    # exclude de novos identified in previous studies, but make sure the probands
+    # from the Iossifox Nature 2014 paper that have been classified as
+    # intellectual_disability, transfer their classifications to the earlier de
+    # novo entries.
     key_1 = paste(iossifov_neuron$person_id, iossifov_neuron$start_pos)
     key_2 = paste(iossifov_nature$person_id, iossifov_nature$start_pos)
+    intersection = key_1[key_1 %in% key_2]
+    iossifov_neuron[["study_phenotype"]][match(intersection, key_1)] = iossifov_nature[["study_phenotype"]][match(intersection, key_2)]
     iossifov_nature = iossifov_nature[!(key_2 %in% key_1), ]
     
-    autism_de_novos = rbind(sanders, oroak, iossifov_neuron, iossifov_nature,
+    autism_de_novos = rbind(iossifov_nature, sanders, oroak, iossifov_neuron,
         derubeis_nature)
     
     # remove de novos that have been dupicated between studies. These are easily
