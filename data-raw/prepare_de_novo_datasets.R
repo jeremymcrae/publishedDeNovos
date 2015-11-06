@@ -25,3 +25,5 @@ save(variants, file="data/variants.rda", compress="xz")
 # also save a copy, so that non-R code can also access the data
 gz = gzfile("data-raw/variants.txt.gz", "w")
 write.table(variants, gz, sep="\t", quote=FALSE, row.names=FALSE)
+close(gz)
+
