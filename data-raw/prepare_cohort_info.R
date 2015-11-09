@@ -10,7 +10,7 @@
 #
 # The table of sex-counts has been carefully extracted from the publications,
 # accounting for overlap in samples between different publications.
-cohorts = read.table(file.path("data-raw", "cohorts.txt"), sep="\t",
+cohorts = read.table(file.path("data-raw", "cohorts.tsv"), sep="\t",
     header=TRUE, stringsAsFactors=FALSE)
 
 save(cohorts, file="data/cohorts.rda", compress="xz")
