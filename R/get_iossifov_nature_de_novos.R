@@ -48,7 +48,7 @@ iossifov_nature_de_novos <- function() {
     # diability than for autism.
     low_iq = families$familyId[families$probandVIQ < 70 & families$probandNVIQ < 70]
     low_iq = low_iq[!is.na(low_iq)]
-    variants$study_phenotype[variants$person_id %in% low_iq] = "intellectual_disability"
+    variants$study_phenotype[!variants$person_id %in% low_iq] = "normal_iq_autism"
     
     variants = subset(variants, select=c("person_id", "sex", "chrom", "start_pos",
         "end_pos", "ref_allele", "alt_allele", "hgnc", "consequence",
