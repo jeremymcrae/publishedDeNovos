@@ -11,7 +11,7 @@
 #'     (VEP format), chromosome, nucleotide position and SNV or INDEL type
 deligt_de_novos <- function() {
     
-    url = "http://www.nejm.org/doi/suppl/10.1056/NEJMoa1206524/suppl_file/nejmoa126524_appendix.pdf"
+    url = "http://www.nejm.org/doi/suppl/10.1056/NEJMoa1206524/suppl_file/nejmoa1206524_appendix.pdf"
     pdf = get_deligt_text(url)
     gender = get_deligt_sex(pdf)
     variants = get_deligt_denovo_table(pdf)
