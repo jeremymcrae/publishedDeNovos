@@ -14,7 +14,7 @@ consequences = c("transcript_ablation", "splice_donor_variant",
     "upstream_gene_variant", "downstream_gene_variant", "TFBS_ablation",
     "TFBS_amplification", "TF_binding_site_variant",
     "regulatory_region_ablation", "regulatory_region_amplification",
-    "regulatory_region_variant", "feature_elongation", "feature_truncation", 
+    "regulatory_region_variant", "feature_elongation", "feature_truncation",
     "intergenic_variant")
 severity = data.frame(consequence=consequences, rank=seq(1:length(consequences)),
     stringsAsFactors=FALSE)
@@ -55,7 +55,7 @@ request_from_ensembl <- function(ext, headers="", build="grch37", tries=0) {
     # check that we are not requesting urls fater than that allowed by Ensembl,
     # sleep until the period expires
     current_time = Sys.time()
-    diff = 0.067 - as.numeric(current_time - get("initial_time", current_time, envir=timeEnv))
+    diff = 0.08 - as.numeric(current_time - get("initial_time", current_time, envir=timeEnv))
     if (diff > 0) { Sys.sleep(diff) }
     
     # set the previous request time to that of the current request
@@ -72,11 +72,12 @@ request_from_ensembl <- function(ext, headers="", build="grch37", tries=0) {
     # an impossible URL.
     if (request$status_code == 503) { # server down
         Sys.sleep(30)
-        return(request_from_ensembl(url, tries))
+        return(request_from_ensembl(ext, headers, build, tries))
     } else if (request$status_code == 429) { # too frequent requests
         reset_time = as.numeric(request$headers$`x-ratelimit-reset`)
+        print(paste("rapid ensembl requests, waiting for", reset_time, "seconds", sep=" "))
         Sys.sleep(reset_time)
-        return(request_from_ensembl(url, tries))
+        return(request_from_ensembl(ext, headers, build, tries))
     } else if (request$status_code == 400) { # bad url
         msg = paste("bad url request: ", url, sep = "")
         stop(msg)
