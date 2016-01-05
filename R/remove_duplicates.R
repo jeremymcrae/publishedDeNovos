@@ -61,7 +61,7 @@ remove_duplicates <- function(de_novos) {
             
             most_severe = unique(de_novos$consequence[matches])
             if (length(most_severe) > 1) {
-                sev = min(severity$rank[severity$consequence %in% consequence])
+                sev = min(severity$rank[severity$consequence %in% most_severe])
                 most_severe = severity$consequence[severity$rank == sev]
             }
             
