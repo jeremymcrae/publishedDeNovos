@@ -97,8 +97,8 @@ get_deligt_sex <- function(pdf) {
 #' @return list of text in supplementary file
 get_deligt_denovo_table <- function(pdf) {
     # clean up table S3
-    start_line = 1709
-    end_line = 1795
+    start_line = 1711
+    end_line = 1797
     text = pdf$content[start_line:end_line]
     
     # trim leading whitespace, then remove blank lines, commented out lines,
