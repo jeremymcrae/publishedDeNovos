@@ -343,3 +343,52 @@ get_sequence_in_region <- function(variant, build="grch37", verbose=FALSE) {
     
     return("")
 }
+
+#' map coordiantes from one assembly to another
+#'
+#' @param variant data frame or list for a variant, containing columns named
+#'     "chrom", "start_pos", and "end_pos" for a single variant
+#' @param inbuild genome build to find consequences on
+#' @param outbuild genome build to find consequences on
+#' @param build build of REST server to use
+#' @param verbose flag indicating whether to print variants as they are checked
+#'
+#' @export
+#' @return a character string containing the HGNC symbol.
+#'
+#' @examples
+#' map_coordinates(data.frame(chrom=c("1"), start_pos=c("1000000"),
+#'     end_pos=c("1000000")))
+#' map_coordinates(list(chrom="1", start_pos="1000000",
+#'     end_pos="1000000"))
+map_coordinates <- function(variant, inbuild='grch38', outbuild='grch37', build='grch37', verbose=FALSE) {
+    
+    # make sure the end position is suitable for the Ensembl REST API request
+    if (as.numeric(variant[["end_pos"]]) < as.numeric(variant[["start_pos"]])) {
+        variant[["end_pos"]] = variant[["start_pos"]]
+    }
+    
+    # define the URL
+    ext = paste("/map/human/", inbuild, "/", sep="")
+    ext = paste(ext, variant[["chrom"]], ":", variant[["start_pos"]], "..",
+        variant[["end_pos"]], ":1/", outbuild, sep="")
+    
+    if (verbose) {
+        print(paste("chr", variant[["chrom"]], ":", variant[["start_pos"]],
+            "    ", ext, sep=""))
+    }
+    
+    json = request_from_ensembl(ext, build)
+    json = rjson::fromJSON(json)
+    
+    # return blank string for variants not in genes
+    mappings = json[['mappings']]
+    if (length(mappings) > 0) {
+        mapped = mappings[[1]][['mapped']]
+        return(list('chrom'=mapped$seq_region_name, 'start_pos'=mapped$start,
+            'end_pos'=mapped$end))
+    }
+    
+    return(list('chrom'=variant[['chrom']], 'start_pos'=variant[['start_pos']],
+        'end_pos'=variant[['end_pos']]))
+}
