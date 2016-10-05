@@ -11,9 +11,10 @@ epi4k = epi4k_de_novos()
 autism = autism_de_novos()
 fromer = fromer_de_novos()
 zaidi = zaidi_de_novos()
+lelieveld = lelieveld_de_novos()
 
 # join the de novo datasets togther, and standardise the variant type column
-variants = rbind(rauch, deligt, gilissen, epi4k, autism, fromer, zaidi)
+variants = rbind(rauch, deligt, gilissen, epi4k, autism, fromer, zaidi, lelieveld)
 variants$type = "snv"
 variants$type[nchar(variants$ref_allele) != 1 | nchar(variants$alt_allele) != 1] = "indel"
 
@@ -26,4 +27,3 @@ save(variants, file="data/variants.rda", compress="xz")
 gz = gzfile("data-raw/variants.txt.gz", "w")
 write.table(variants, gz, sep="\t", quote=FALSE, row.names=FALSE)
 close(gz)
-
