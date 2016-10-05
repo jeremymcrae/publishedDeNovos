@@ -55,8 +55,8 @@ request_from_ensembl <- function(ext, headers="", build="grch37", tries=0) {
     # check that we are not requesting urls fater than that allowed by Ensembl,
     # sleep until the period expires
     current_time = Sys.time()
-    diff = 0.08 - as.numeric(current_time - get("initial_time", current_time, envir=timeEnv))
-    if (diff > 0) { Sys.sleep(diff) }
+    diff = 0.1 - as.numeric(current_time - get("initial_time", current_time, envir=timeEnv))
+    Sys.sleep(max(diff, 0))
     
     # set the previous request time to that of the current request
     assign("initial_time", current_time, envir=timeEnv)
@@ -74,7 +74,7 @@ request_from_ensembl <- function(ext, headers="", build="grch37", tries=0) {
         Sys.sleep(30)
         return(request_from_ensembl(ext, headers, build, tries))
     } else if (request$status_code == 429) { # too frequent requests
-        reset_time = as.numeric(request$headers$`x-ratelimit-reset`)
+        reset_time = as.numeric(request$headers$`retry-after`)
         print(paste("rapid ensembl requests, waiting for", reset_time, "seconds", sep=" "))
         Sys.sleep(reset_time)
         return(request_from_ensembl(ext, headers, build, tries))
