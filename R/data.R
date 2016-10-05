@@ -36,6 +36,9 @@
 #' Zaidi et al. (2013) Nature 498:220-223. Supplementary table 4
 #' doi: 10.1038/nature12141
 #'
+#' Lelieveld et al. (2016) Nature Neuroscience 19:1194-1196. Supplementary table 2
+#' doi: 10.1038/nature12141
+#'
 #' @source url(http://www.sciencedirect.com/science/MiamiMultiMediaURL/1-s2.0-S0140673612614809/1-s2.0-S0140673612614809-mmc1.pdf/271074/FULL/S0140673612614809/55b26043f4a279334b3a5ec00b9faf4b/mmc1.pdf)
 #' @source url(http://www.nejm.org/doi/suppl/10.1056/NEJMoa1206524/suppl_file/nejmoa126524_appendix.pdf)
 #' @source url(http://www.nature.com/nature/journal/v511/n7509/extref/nature13394-s1.pdf)
@@ -48,6 +51,7 @@
 #' @source url(http://www.nature.com/nature/journal/v515/n7526/extref/nature13772-s4.xlsx)
 #' @source url(http://www.nature.com/nature/journal/v506/n7487/extref/nature12929-s2.xlsx)
 #' @source url(http://www.nature.com/nature/journal/v498/n7453/extref/nature12141-s1.pdf)
+#' @source url(http://www.nature.com/neuro/journal/v19/n9/extref/nn.4352-S3.xlsx)
 #' @format A data frame with thirteen variables: \code{person_id}, \code{sex},
 #'     \code{chrom}, \code{start_pos}, \code{end_pos}, \code{ref_allele},
 #'     \code{alt_allele}, \code{hgnc}, \code{consequence}, \code{study_code},

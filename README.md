@@ -44,3 +44,4 @@ reference      |      phenotype      |      resources
 [Fromer _et al_. _Nature_ 506:179-184](https://doi.org/10.1038/nature12929)      |      schizophrenia      |      [table S1](http://www.nature.com/nature/journal/v506/n7487/extref/nature12929-s2.xlsx)
 [Gilissen _et al_. _Nature_ 511:344-347](https://doi.org/10.1038/nature13394)      |      intellectual_disability      |      [table S8](http://www.nature.com/nature/journal/v511/n7509/extref/nature13394-s1.pdf)
 [Iossifov _et al_. _Nature_ 498:216-221](https://doi.org/10.1038/nature13908)      |      autism      |      [table S2](http://www.nature.com/nature/journal/v515/n7526/extref/nature13908-s2.zip)
+[Lelieveld _et al_. _Nature Neuroscience_ 19:1194-1196](https://doi.org/10.1038/nn.4352)      |      intellectual_disability      |      [table S2](http://www.nature.com/neuro/journal/v19/n9/extref/nn.4352-S3.xlsx)

@@ -32,6 +32,8 @@ url(http://www.nature.com/nature/journal/v515/n7526/extref/nature13772-s4.xlsx)
 url(http://www.nature.com/nature/journal/v506/n7487/extref/nature12929-s2.xlsx)
 
 url(http://www.nature.com/nature/journal/v498/n7453/extref/nature12141-s1.pdf)
+
+url(http://www.nature.com/neuro/journal/v19/n9/extref/nn.4352-S3.xlsx)
 }
 \usage{
 variants
@@ -72,6 +74,9 @@ Fromer et al. (2014) Nature 506:179-184. Supplementary table 1
 doi: 10.1038/nature12929
 
 Zaidi et al. (2013) Nature 498:220-223. Supplementary table 4
+doi: 10.1038/nature12141
+
+Lelieveld et al. (2016) Nature Neuroscience 19:1194-1196. Supplementary table 2
 doi: 10.1038/nature12141
 }
 \keyword{datasets}
